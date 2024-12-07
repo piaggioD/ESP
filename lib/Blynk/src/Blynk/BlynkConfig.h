@@ -19,7 +19,7 @@
 #ifdef BLYNK_TEMPLATE_ID
 #define BLYNK_DEFAULT_DOMAIN     "blynk.cloud"
 #else
-#define BLYNK_DEFAULT_DOMAIN     "blynk-cloud.com"
+#define BLYNK_DEFAULT_DOMAIN     "blynk-cloud" //bolo .com BLINK : _C015.cpp
 #endif
 
 #define BLYNK_DEFAULT_PORT       80
