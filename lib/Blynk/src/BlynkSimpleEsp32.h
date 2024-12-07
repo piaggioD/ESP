@@ -23,12 +23,16 @@
 #include <WiFi.h>
 
 class BlynkWifi
+//Toto je název třídy. BlynkWifi je třída, která dědí z BlynkProtocol<BlynkArduinoClient>. To znamená, že BlynkWifi přebírá veškeré vlastnosti a 
+//metody z BlynkProtocol, kde BlynkProtocol je šablonová třída, která přijímá jako šablonový parametr třídu BlynkArduinoClient.
+
     : public BlynkProtocol<BlynkArduinoClient>
 {
     typedef BlynkProtocol<BlynkArduinoClient> Base;
 public:
-    BlynkWifi(BlynkArduinoClient& transp)
-        : Base(transp)
+    BlynkWifi(BlynkArduinoClient& transp)  //BlynkArduinoClient& transp: Toto je referenční parametr na instanci třídy BlynkArduinoClient. 
+                                           // Použití reference znamená, že místo kopie objektu se předává odkaz na původní objekt, což šetří paměť a výkon.
+        : Base(transp) //Base je typedef pro BlynkProtocol<BlynkArduinoClient>. V podstatě, Base je alias pro základní třídu BlynkProtocol s parametrem BlynkArduinoClient
     {}
 
     void config(const char* auth,
